@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "xiosbase": "cpp",
+        "fstream": "cpp",
+        "vector": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "xstring": "cpp",
+        "ios": "cpp",
+        "cmath": "cpp",
+        "ostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
