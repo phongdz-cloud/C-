@@ -1,37 +1,78 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-// Nhập số nguyên n và số thực x Tính S = 1 + x/1 + x^2/2! + ... + x^n/n!
-void input(int &n, double &x);
-void output(double result);
-double solution(int n, double x);
+/*
+    Nhập vào ngày, tháng, năm. Hỏi từ ngày vừa nhập là ngày thứ bao nhiêu trong năm?
+    (Tính khoảng cách từ ngày đầu năm đến ngày vừa nhập)
+*/
+void input(int &d, int &m, int &y);
+void output(int result);
+bool checkValid(int days[], int d, int m, int y);
+bool checkLeapYear(int y);
+int solution(int days[], int d, int m, bool flag);
 int main()
 {
-    int n;
-    double result, x;
-    input(n, x);
-    result = solution(n, x);
+    int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int d, m, y, result;
+    bool flag;
+    input(d, m, y)
+    flag = checkValid(days, d, m, y);
+    result = solution(days, d, m, flag);
     output(result);
     return 0;
 }
-void input(int &n, double &x)
+void input(int &d, int &m, int &y)
 {
-    cin >> n >> x;
+    cin >> d >> m >> y;
 }
-double solution(int n, double x)
+void output(int result)
 {
-    double result = 1;
-    double numerator = 1;
-    double mul = 1;
-    for (int i = 1; i <= n; i++)
+    if (result != -1)
+        cout << result;
+    else
+        cout << "Ngay thang nam khong hop le!";
+}
+int solution(int days[], int d, int m, bool flag)
+{
+    if (flag == true)
     {
-        numerator *= (1.0) / x;
-        mul *= (1.0) / i;
-        result += mul * ((1.0) / numerator);
+        int count = 0;
+        int i = 1;
+        while (i <= 12)
+        {
+            if (i == m)
+            {
+                count += d;
+                break;
+            }
+            count += days[i - 1];
+            i++;
+        }
+        return count;
     }
-    return result;
+    return -1;
 }
-void output(double result)
+bool checkValid(int days[], int d, int m, int y)
 {
-    cout << result;
+    if (y > 0 && m >= 1 && m <= 12 && d >= 1 && d <= 31)
+    {
+        if (checkLeapYear(y)) // năm nhuận
+        {
+            days[1]++;
+        }
+        if (d > days[m - 1])
+            return false;
+        return true;
+    }
+    return false;
+}
+bool checkLeapYear(int y)
+{
+    // Năm nhuận chia hết cho 400
+    if (y % 400 == 0)
+        return true;
+    // Năm nhuận chia hết cho 4 nhưng không chia hết cho 100
+    if (y % 4 == 0 && y % 100 != 0)
+        return true;
+    return false;
 }
