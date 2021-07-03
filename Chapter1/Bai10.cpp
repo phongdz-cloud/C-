@@ -18,7 +18,7 @@ void input(float &a)
 {
     cin >> a;
 }
-int solution(float a)
+int solution(float a)///note
 {
     if (a - (int)a > 0)
         return a; // Ep ngầm về kiểu int;
