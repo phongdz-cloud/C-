@@ -7,7 +7,8 @@ int solution(float a);
 void output(int result);
 int main()
 {
-    float a, int result;
+    float a;
+    int result;
     input(a);
     result = solution(a);
     output(result);
@@ -19,9 +20,9 @@ void input(float &a)
 }
 int solution(float a)
 {
-    if (a < 0 && (a + (int)a * (-1) >= -0.5))
-        return (int)a + 1;
-    if (a - (int)a >= 0.5)
+    if (a < 0 && (a + (int)a * (-1) < -0.5))
+        return (int)a - 1;
+    if (a > 0 && a - (int)a >= 0.5)
         return (int)a + 1;
     return (int)a;
 }
