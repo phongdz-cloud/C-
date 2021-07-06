@@ -20,11 +20,12 @@ void input(float &a)
 }
 int solution(float a)
 {
-    if (a < 0 && (a + (int)a * (-1) < -0.5))
-        return (int)a - 1;
-    if (a > 0 && a - (int)a >= 0.5)
-        return (int)a + 1;
-    return (int)a;
+    int b = (int)a;
+    if (a < 0 && (a + b * (-1) < -0.5))
+        return (b - 1;
+    if (a - b >= 0.5)
+        return b + 1;
+    return b;
 }
 void output(int result)
 {

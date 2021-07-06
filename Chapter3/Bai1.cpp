@@ -6,8 +6,9 @@ bool solution(int a, int b,float &result);
 void output(bool flag,float result);
 int main()
 {
-    int a, b;
-    float result,flag;
+    int a, b; 
+    float result;
+    bool flag;
     input(a,b);
     flag = solution(a,b,result);
     output(flag,result);
@@ -17,7 +18,7 @@ void input(int &a, int&b)
 {
     cin >>a>>b;
 }
-bool solution(int a, int b,float &result)
+bool solution(int a, int b,float &result) 
 {
     if( b == 0) return false;
     result = (a*1.0)/b;
