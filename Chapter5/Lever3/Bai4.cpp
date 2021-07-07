@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-// Nhập số nguyên dương n. Tính S = 1*2*3*n!
+// Nhập số nguyên dương n. Tính S = 1*2*3*n!//note
 void input(int &n);
 void output(int result);
 int solution(int n);
