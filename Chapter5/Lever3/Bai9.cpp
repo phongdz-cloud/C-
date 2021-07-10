@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-// Tìm ước chung lớn nhất của 2 số nguyên dương a và b nhập từ bàn phím
+// Tìm ước chung lớn nhất của 2 số nguyên dương a và b nhập từ bàn phím//note
 void input(int &a, int &b);
 void output(int result);
 int solution(int a, int b);
@@ -19,7 +19,7 @@ void input(int &a, int &b)
 }
 void output(int result)
 {
-    cout << result;
+    cout << result; //
 }
 int solution(int a, int b)
 {
