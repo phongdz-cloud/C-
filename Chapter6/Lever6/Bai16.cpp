@@ -27,7 +27,7 @@ void input(int A[], int &n)
         cin >> A[i];
     }
 }
-int solution(int A[], int n)
+int solution(int A[], int n)//note
 {
     int positiveNumber = -1;
     for (int i = 0; i < n; i++)
